@@ -59,21 +59,21 @@ spec:
             name: app-demo-svc 
             port:
               number: 80
-  tls:
-  - hosts:
-    - app-demo.nambui.xyz
-    secretName: app-demo-tls-secret              
----
-apiVersion: cert-manager.io/v1
-kind: Certificate
-metadata:
-  name: app-demo-cert
-  namespace: app-demo
-spec:
-  secretName: app-demo-tls-secret
-  issuerRef:
-    name: letsencrypt-production
-    kind: ClusterIssuer
-  commonName: "app-demo.nambui.xyz"
-  dnsNames:
-    - "app-demo.nambui.xyz"
+  #tls:
+  #- hosts:
+    #- app-demo.nambui.xyz
+    #secretName: app-demo-tls-secret              
+#---
+#apiVersion: cert-manager.io/v1
+#kind: Certificate
+#metadata:
+  #name: app-demo-cert
+  #namespace: app-demo
+#spec:
+  #secretName: app-demo-tls-secret
+  #issuerRef:
+    #name: letsencrypt-production
+    #kind: ClusterIssuer
+  #commonName: "app-demo.nambui.xyz"
+  #dnsNames:
+    #- "app-demo.nambui.xyz"
