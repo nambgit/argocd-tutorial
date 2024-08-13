@@ -42,23 +42,23 @@ spec:
   selector:
     app: app-demo
 ---
-#apiVersion: networking.k8s.io/v1
-#kind: Ingress
-#metadata:
-  #name: app-demo-ingress
-  #namespace: app-demo
-#spec:
-  #rules:
-#  - host: "app-demo.nambui.xyz"
-#    http:
-#      paths:
-#      - path: /
-#        pathType: Prefix
-#        backend:
-#          service:
-#            name: app-demo-svc 
-#            port:
-#              number: 80
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app-demo-ingress
+  namespace: app-demo
+spec:
+  rules:
+  - host: "app-demo.nambui.xyz"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: app-demo-svc 
+            port:
+              number: 80
   #tls:
   #- hosts:
     #- app-demo.nambui.xyz
